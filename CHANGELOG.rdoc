@@ -1,0 +1,85 @@
+== Versão 1.9.0
+- Novo: {Issue #11: Suporte ao formato envelope}[https://github.com/prodis/correios-frete/pull/11].
+
+== Versão 1.8.0
+- Novo: {Issue #10: Suporte ao formato envelope}[https://github.com/prodis/correios-frete/issues/10].
+
+== Versão 1.7.0
+- Novo: Configuração de tempo de espera de resposta (timeout) para requisições ao Web Service dos Correios.
+- Atualização: Gem WebMock no lugar da gem FakeWeb e remoção da gem Jeweler.
+
+== Versão 1.6.2
+- Melhoria: Método HTTP no log de requisição.
+- Atualização: Versão 0.0.3 da gem log-me.
+
+== Versão 1.6.1
+- Melhoria: Encoding de ISO-8859-1 para UTF-8 em toda resposta do Web Service.
+
+== Versão 1.6.0
+- Correção: Encoding de ISO-8859-1 para UTF-8 na mensagem de erro dos serviços, pois o parser não estava rolando para mensagens com acentos e/ou cedilhas.
+
+== Versão 1.5.2
+- Correção: {Issue #9: Bundler as dependency}[https://github.com/prodis/correios-frete/issues/9] - Remoção da gem bundler das dependências de ambiente de desenvolvimento.
+- Atualização: Refatorações de testes.
+
+== Versão 1.5.1
+- Novo: Construtor de Correios::Frete::Pacote recebendo itens.
+
+== Versão 1.5.0
+- Novo: {Issue #3: Cálculo de frete para múltiplos itens}[https://github.com/prodis/correios-frete/issues/3] utilizando pacotes.
+- Correção: Formatação de separador de casas decimais com vírgula na requisição do Web Service dos Correios.
+
+== Versão 1.4.0
+- Novo: Suporte para cálculo de e-SEDEX Prioritário e e-SEDEX Express.
+
+== Versão 1.3.3
+- Atualização: Versão 1.5.0 da gem nokogiri.
+
+== Versão 1.3.2
+- Correção: Data do gemspec estava sendo gerada com horário zerado e parava a instalação da gem.
+
+== Versão 1.3.1
+- Correção: Passagem correta de parâmetros na criação da classe Correios::Frete::WebService no cálculo de frete.
+
+== Versão 1.3.0
+- Atualização: Refatoração das classes Correios::Frete::Calculador e Correios::Frete::WebService.
+
+== Versão 1.2.1
+- Atualização: Documentação
+
+== Versão 1.2.0
+- Novo: Uso da gem LogMe.
+- Melhoria: Opção de logar os cabeçalhos HTTP da resposta do Web Service dos Correios.
+
+== Versão 1.1.0
+- Novo: Suporte para todos os serviços de frete disponibilizados pelos Correios.
+- Correção: Formatação com duas casas decimais do valor declarado.
+
+== Versão 1.0.2
+- Melhoria: Remoção dos cabeçalhos HTTP no log da resposta do Web Service dos Correios.
+
+== Versão 1.0.1
+- Atualização: Documentação.
+
+== Versão 1.0.0
+- Aviso: Quebra de compatibilidade com a versão 0.3.0.
+- Novo: Adicionado log de requisição e resposta do Web Service dos Correios.
+
+== Versão 0.3.0
+- Novo: Métodos diretos para cálculo de um serviço de frete por vez. Exemplo: Correios::Frete#calcular_sedex.
+
+== Versão 0.2.1
+- Melhoria: Alias Correios::Frete::Servico#sucesso? para Correios::Frete::Servico#success?.
+- Melhoria: Alias Correios::Frete::Servico#erro? para Correios::Frete::Servico#error?.
+- Atualização: Documentação.
+
+== Versão 0.2.0
+- Novo: Suporte para cálculo de e-SEDEX.
+- Melhoria: Alias Correios::Frete#calculate para Correios::Frete#calcular.
+- Melhoria: Atributo "nome" em Correios::Frete::Servico.
+- Correção: {Issue #2: undefined method `key' for #&lt;Hash:0xb5e8eea4&gt;}[https://github.com/prodis/correios-frete/issues/2].
+
+== Versão 0.1.0
+- Cálculo de frete para os serviços PAC, SEDEX, SEDEX 10 e SEDEX Hoje.
+- Cálculo de um serviço de frete por vez.
+- Cálculo de vários serviços de frete ao mesmo tempo.
