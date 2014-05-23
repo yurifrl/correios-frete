@@ -54,7 +54,7 @@ module Correios
             end
 
             def service_codes_for(service_types)
-                service_types.map { |type| Correios::Frete::Servico.code_from_type(type) }.join(",")
+                service_types.map { |mytype| Correios::Frete::Servico.code_from_type(mytype) }.join(",")
             end
 
             def with_log

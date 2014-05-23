@@ -149,9 +149,9 @@ describe Correios::Frete::Servico do
 
   describe ".code_from_type" do
     Correios::Frete::Servico::AVAILABLE_SERVICES.each do |code, value|
-      context "to #{value[:type]} type" do
+      context "to #{value[:my_type]} my_type" do
         it "returns #{code} code" do
-          Correios::Frete::Servico.code_from_type(value[:type]).should == code
+          Correios::Frete::Servico.code_from_type(value[:my_type]).should == code
         end
       end
     end

@@ -139,7 +139,7 @@ describe Correios::Frete::Calculador do
 
   ["calcular", "calculate"].each do |method_name|
     Correios::Frete::Servico::AVAILABLE_SERVICES.each do |key, service|
-      describe "##{method_name}_#{service[:type]}" do
+      describe "##{method_name}_#{service[:my_type]}" do
         before :each do
           @frete = Correios::Frete::Calculador.new
           @servico = Correios::Frete::Servico.new
@@ -147,16 +147,16 @@ describe Correios::Frete::Calculador do
           web_service = double(Correios::Frete::WebService, :request! => "XML")
           Correios::Frete::WebService.stub(:new).and_return(web_service)
 
-          parser = double(Correios::Frete::Parser, :servicos => { service[:type] => @servico })
+          parser = double(Correios::Frete::Parser, :servicos => { service[:my_type] => @servico })
           Correios::Frete::Parser.stub(:new).and_return(parser)
         end
 
         it "calculates #{service[:name]}" do
-          @frete.send("#{method_name}_#{service[:type]}").should == @servico
+          @frete.send("#{method_name}_#{service[:my_type]}").should == @servico
         end
 
         it "returns true in respond_to?" do
-          @frete.respond_to?("#{method_name}_#{service[:type]}").should be_true
+          @frete.respond_to?("#{method_name}_#{service[:my_type]}").should be_true
         end
       end
     end
